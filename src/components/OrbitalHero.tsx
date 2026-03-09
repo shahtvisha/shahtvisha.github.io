@@ -27,7 +27,7 @@ export default function OrbitalHero() {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6">
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border pointer-events-none"
-        style={{ width: 700, height: 420, borderColor: "hsl(348 15% 88%)" }}
+        style={{ width: 700, height: 420, borderColor: "hsl(220 13% 88%)" }}
         initial={{ opacity: 0.3 }}
         animate={{ opacity: transitioning ? 0 : 0.3 }}
         transition={{ duration: 1.5 }}
