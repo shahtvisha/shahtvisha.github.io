@@ -17,38 +17,39 @@ const skillCategories = [
 
 export default function SkillsSection() {
   return (
-    <section className="py-24 px-4" id="skills">
-      <div className="max-w-4xl mx-auto">
+    <section className="py-28 px-6 bg-card" id="skills">
+      <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-2">
-            What I <span className="text-gradient-primary">Know</span>
+          <p className="text-sm tracking-[0.25em] uppercase text-muted-foreground mb-4 font-sans">
+            Expertise
+          </p>
+          <h2 className="text-4xl md:text-6xl font-serif font-bold mb-14 text-foreground">
+            What I <span className="italic text-gradient-warm">bring</span> to the table.
           </h2>
-          <div className="w-16 h-1 bg-primary rounded-full mb-12" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="space-y-12">
           {skillCategories.map((cat, ci) => (
             <motion.div
               key={cat.title}
-              className="p-6 rounded-xl bg-card border border-glow"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: ci * 0.1 }}
             >
-              <h3 className="font-mono text-primary text-sm uppercase tracking-wider mb-4">
+              <h3 className="font-serif italic text-foreground text-lg mb-4">
                 {cat.title}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {cat.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 text-sm rounded-md bg-secondary text-secondary-foreground font-medium"
+                    className="px-4 py-2 text-sm rounded-full border border-border bg-background text-foreground font-sans font-medium"
                   >
                     {skill}
                   </span>
