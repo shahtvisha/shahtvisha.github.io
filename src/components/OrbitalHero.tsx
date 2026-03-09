@@ -6,7 +6,7 @@ const skills = [
   "Machine Learning", "Algorithms", "Systems", "Research",
 ];
 
-const ORBIT_DURATION = 7;
+const ORBIT_DURATION = 5;
 
 export default function OrbitalHero() {
   const [settled, setSettled] = useState(false);
@@ -30,8 +30,8 @@ export default function OrbitalHero() {
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border pointer-events-none"
         style={{
-          width: 560,
-          height: 340,
+          width: 700,
+          height: 420,
           borderColor: "hsl(348 15% 88%)",
         }}
         initial={{ opacity: 0.3 }}
@@ -132,8 +132,8 @@ function SkillWord({
 }) {
   const controls = useAnimation();
   const angleOffset = (index / total) * Math.PI * 2;
-  const rx = 270;
-  const ry = 160;
+  const rx = 340;
+  const ry = 200;
 
   useEffect(() => {
     if (settled) return;
@@ -170,7 +170,7 @@ function SkillWord({
       x: xKeys,
       y: yKeys,
       opacity: opacityKeys,
-      transition: { duration: 14, repeat: Infinity, ease: "linear" },
+      transition: { duration: 20, repeat: Infinity, ease: "linear" },
     });
   }, [controls, angleOffset, transitioning, settled, settledPos]);
 
