@@ -3,6 +3,7 @@ import OrbitalHero from "@/components/OrbitalHero";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import BeyondSection from "@/components/BeyondSection";
 import FooterSection from "@/components/FooterSection";
 import ParallaxSection from "@/components/ParallaxSection";
 
@@ -19,6 +20,9 @@ const Index = () => {
       </ParallaxSection>
       <ParallaxSection offset={30}>
         <SkillsSection />
+      </ParallaxSection>
+      <ParallaxSection offset={25}>
+        <BeyondSection />
       </ParallaxSection>
       <FooterSection />
     </div>
