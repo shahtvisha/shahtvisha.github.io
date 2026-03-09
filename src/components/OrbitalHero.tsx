@@ -132,8 +132,8 @@ function SkillWord({
 }) {
   const controls = useAnimation();
   const angleOffset = (index / total) * Math.PI * 2;
-  const rx = 270;
-  const ry = 160;
+  const rx = 340;
+  const ry = 200;
 
   useEffect(() => {
     if (settled) return;
