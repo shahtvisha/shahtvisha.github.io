@@ -2,18 +2,18 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 const socials = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "X / Twitter" },
   { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Github, href: "#", label: "GitHub" },
+  { icon: Twitter, href: "#", label: "X" },
 ];
 
 export default function FooterSection() {
   return (
-    <footer className="py-28 px-6" id="contact">
-      <div className="max-w-2xl mx-auto text-center">
+    <footer className="py-24 md:py-28 px-4 md:px-6" id="contact">
+      <div className="max-w-lg md:max-w-2xl mx-auto text-center">
         <motion.h2
-          className="text-4xl md:text-5xl font-serif font-medium mb-4 text-foreground"
+          className="text-3xl md:text-5xl font-serif font-medium mb-3 md:mb-4 text-foreground"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -22,7 +22,7 @@ export default function FooterSection() {
           Let's <span className="italic text-gradient-warm">connect</span>.
         </motion.h2>
         <motion.p
-          className="text-muted-foreground text-sm md:text-base font-sans font-light mb-14 max-w-sm mx-auto leading-relaxed"
+          className="text-muted-foreground text-sm font-sans font-light mb-10 md:mb-14 max-w-xs mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -32,7 +32,7 @@ export default function FooterSection() {
         </motion.p>
 
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mb-14 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -42,7 +42,7 @@ export default function FooterSection() {
             <motion.a
               key={label}
               href={href}
-              className="group flex flex-col items-center gap-4 p-8 rounded-2xl border border-border bg-card/50 hover:bg-accent/50 hover:border-accent transition-all duration-300"
+              className="group flex flex-col items-center gap-3 p-6 md:p-7 rounded-2xl border border-border bg-card/50 hover:bg-accent/50 hover:border-accent transition-all duration-300"
               whileHover={{ scale: 1.03, y: -4 }}
               whileTap={{ scale: 0.97 }}
               initial={{ opacity: 0, y: 20 }}
@@ -52,11 +52,11 @@ export default function FooterSection() {
               aria-label={label}
             >
               <Icon
-                size={40}
+                size={32}
                 strokeWidth={1.2}
                 className="text-muted-foreground group-hover:text-foreground transition-colors duration-300"
               />
-              <span className="text-xs tracking-[0.15em] uppercase font-sans font-light text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+              <span className="text-[10px] tracking-[0.15em] uppercase font-sans font-light text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                 {label}
               </span>
             </motion.a>
