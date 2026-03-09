@@ -1,5 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const skills = [
   "React", "Python", "C++", "TypeScript",
@@ -11,6 +12,7 @@ const ORBIT_DURATION = 5;
 export default function OrbitalHero() {
   const [settled, setSettled] = useState(false);
   const [transitioning, setTransitioning] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const t1 = setTimeout(() => setTransitioning(true), (ORBIT_DURATION - 1.5) * 1000);
@@ -18,22 +20,32 @@ export default function OrbitalHero() {
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
 
-  const settledPositions = [
+  const desktopPositions = [
     { x: -220, y: 0 }, { x: -100, y: 0 }, { x: 20, y: 0 }, { x: 140, y: 0 },
     { x: -180, y: 36 }, { x: -50, y: 36 }, { x: 80, y: 36 }, { x: 200, y: 36 },
   ];
 
+  const mobilePositions = [
+    { x: -90, y: -20 }, { x: 30, y: -20 }, { x: -60, y: 10 }, { x: 60, y: 10 },
+    { x: -90, y: 40 }, { x: 30, y: 40 }, { x: -60, y: 70 }, { x: 60, y: 70 },
+  ];
+
+  const settledPositions = isMobile ? mobilePositions : desktopPositions;
+  const rx = isMobile ? 140 : 340;
+  const ry = isMobile ? 90 : 200;
+  const orbitSize = isMobile ? { width: 320, height: 220 } : { width: 700, height: 420 };
+
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-6">
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border pointer-events-none"
-        style={{ width: 700, height: 420, borderColor: "hsl(220 13% 88%)" }}
+        style={{ width: orbitSize.width, height: orbitSize.height, borderColor: "hsl(220 13% 88%)" }}
         initial={{ opacity: 0.3 }}
         animate={{ opacity: transitioning ? 0 : 0.3 }}
         transition={{ duration: 1.5 }}
       />
 
-      <div className="relative flex items-center justify-center" style={{ width: "100%", maxWidth: 700, height: 500 }}>
+      <div className="relative flex items-center justify-center w-full" style={{ maxWidth: orbitSize.width, height: isMobile ? 380 : 500 }}>
         {skills.map((skill, i) => (
           <SkillWord
             key={skill}
@@ -43,12 +55,14 @@ export default function OrbitalHero() {
             settled={settled}
             transitioning={transitioning}
             settledPos={settledPositions[i]}
+            rx={rx}
+            ry={ry}
           />
         ))}
 
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
           <motion.p
-            className="text-[11px] tracking-[0.4em] uppercase text-muted-foreground mb-7 font-sans font-medium"
+            className="text-[10px] md:text-[11px] tracking-[0.3em] md:tracking-[0.4em] uppercase text-muted-foreground mb-5 md:mb-7 font-sans font-medium text-center"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 1.2 }}
@@ -57,7 +71,7 @@ export default function OrbitalHero() {
           </motion.p>
           <motion.h1
             className="font-serif text-foreground text-center leading-[1.1]"
-            style={{ fontSize: "clamp(2.6rem, 5.5vw, 4.5rem)", fontWeight: 500 }}
+            style={{ fontSize: "clamp(2rem, 5.5vw, 4.5rem)", fontWeight: 500 }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.8, ease: "easeOut" }}
@@ -72,13 +86,13 @@ export default function OrbitalHero() {
             </motion.span>
           </motion.h1>
           <motion.div
-            className="w-10 h-px bg-primary/30 mt-5 mb-5"
+            className="w-8 md:w-10 h-px bg-primary/30 mt-4 md:mt-5 mb-4 md:mb-5"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
           />
           <motion.p
-            className="text-muted-foreground text-sm md:text-base max-w-[280px] mx-auto font-sans font-light leading-[1.7] text-center"
+            className="text-muted-foreground text-xs md:text-base max-w-[240px] md:max-w-[280px] mx-auto font-sans font-light leading-[1.7] text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1.2 }}
@@ -90,7 +104,7 @@ export default function OrbitalHero() {
 
       <motion.a
         href="#about"
-        className="absolute bottom-14 flex flex-col items-center gap-2 cursor-pointer group"
+        className="absolute bottom-10 md:bottom-14 flex flex-col items-center gap-2 cursor-pointer group"
         initial={{ opacity: 0 }}
         animate={{ opacity: settled ? 0.6 : 0 }}
         transition={{ delay: 1, duration: 0.8 }}
@@ -114,16 +128,14 @@ export default function OrbitalHero() {
 }
 
 function SkillWord({
-  skill, index, total, settled, transitioning, settledPos,
+  skill, index, total, settled, transitioning, settledPos, rx, ry,
 }: {
   skill: string; index: number; total: number;
   settled: boolean; transitioning: boolean; settledPos: { x: number; y: number };
+  rx: number; ry: number;
 }) {
   const controls = useAnimation();
   const angleOffset = (index / total) * Math.PI * 2;
-  const rx = 340;
-  const ry = 200;
-  // Staggered entrance delay per skill
   const entranceDelay = index * 0.3;
 
   useEffect(() => {
@@ -132,14 +144,13 @@ function SkillWord({
     if (transitioning) {
       controls.start({
         x: settledPos.x,
-        y: settledPos.y + 120,
+        y: settledPos.y + (rx < 200 ? 80 : 120),
         opacity: 0.7,
         transition: { type: "tween", duration: 1.5, ease: [0.25, 0.1, 0.25, 1] },
       });
       return;
     }
 
-    // Staggered: wait, then fade in while starting orbit
     const timeout = setTimeout(() => {
       const frames = 120;
       const xKeys: number[] = [];
@@ -159,17 +170,17 @@ function SkillWord({
     }, entranceDelay * 1000);
 
     return () => clearTimeout(timeout);
-  }, [controls, angleOffset, transitioning, settled, settledPos, entranceDelay]);
+  }, [controls, angleOffset, transitioning, settled, settledPos, entranceDelay, rx, ry]);
 
-  const baseClass = "absolute left-1/2 top-1/2 text-[11px] font-sans font-normal tracking-[0.25em] uppercase text-muted-foreground whitespace-nowrap";
+  const baseClass = "absolute left-1/2 top-1/2 text-[9px] md:text-[11px] font-sans font-normal tracking-[0.2em] md:tracking-[0.25em] uppercase text-muted-foreground whitespace-nowrap";
 
   if (settled) {
     return (
       <motion.span
         className={baseClass}
         style={{ translateX: "-50%", translateY: "-50%" }}
-        initial={{ x: settledPos.x, y: settledPos.y + 120, opacity: 0 }}
-        animate={{ x: settledPos.x, y: settledPos.y + 120, opacity: 0.65 }}
+        initial={{ x: settledPos.x, y: settledPos.y + (rx < 200 ? 80 : 120), opacity: 0 }}
+        animate={{ x: settledPos.x, y: settledPos.y + (rx < 200 ? 80 : 120), opacity: 0.65 }}
         transition={{ duration: 0.6, delay: index * 0.06, ease: "easeOut" }}
       >
         {skill}
