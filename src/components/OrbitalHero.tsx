@@ -30,8 +30,8 @@ export default function OrbitalHero() {
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border pointer-events-none"
         style={{
-          width: 560,
-          height: 340,
+          width: 700,
+          height: 420,
           borderColor: "hsl(348 15% 88%)",
         }}
         initial={{ opacity: 0.3 }}
