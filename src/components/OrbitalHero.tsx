@@ -170,7 +170,7 @@ function SkillWord({
       x: xKeys,
       y: yKeys,
       opacity: opacityKeys,
-      transition: { duration: 14, repeat: Infinity, ease: "linear" },
+      transition: { duration: 20, repeat: Infinity, ease: "linear" },
     });
   }, [controls, angleOffset, transitioning, settled, settledPos]);
 
