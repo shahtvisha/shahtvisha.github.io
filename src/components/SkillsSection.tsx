@@ -11,45 +11,45 @@ const skillCategories = [
   },
   {
     title: "Domains",
-    skills: ["Embedded Systems", "Machine Learning", "Web Dev", "Algorithms", "Computer Architecture", "Networking"],
+    skills: ["Embedded Systems", "Machine Learning", "Web Dev", "Algorithms", "Architecture", "Networking"],
   },
 ];
 
 export default function SkillsSection() {
   return (
-    <section className="py-28 px-6 bg-card" id="skills">
-      <div className="max-w-3xl mx-auto">
+    <section className="py-32 px-6" id="skills">
+      <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
         >
-          <p className="text-sm tracking-[0.25em] uppercase text-muted-foreground mb-4 font-sans">
+          <p className="text-xs tracking-[0.35em] uppercase text-muted-foreground mb-8 font-sans">
             Expertise
           </p>
-          <h2 className="text-4xl md:text-6xl font-serif font-bold mb-14 text-foreground">
+          <h2 className="text-4xl md:text-5xl font-serif font-medium mb-16 text-foreground leading-tight">
             What I <span className="italic text-gradient-warm">bring</span> to the table.
           </h2>
         </motion.div>
 
-        <div className="space-y-12">
+        <div className="space-y-14">
           {skillCategories.map((cat, ci) => (
             <motion.div
               key={cat.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: ci * 0.1 }}
+              transition={{ duration: 0.6, delay: ci * 0.1 }}
             >
-              <h3 className="font-serif italic text-foreground text-lg mb-4">
+              <h3 className="font-serif italic text-foreground text-lg mb-5">
                 {cat.title}
               </h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
                 {cat.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-4 py-2 text-sm rounded-full border border-border bg-background text-foreground font-sans font-medium"
+                    className="text-sm font-sans font-light tracking-widest uppercase text-muted-foreground"
                   >
                     {skill}
                   </span>
