@@ -1,18 +1,19 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 const socials = [
   { icon: Github, href: "#", label: "GitHub" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Twitter, href: "#", label: "X / Twitter" },
   { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
 ];
 
 export default function FooterSection() {
   return (
-    <footer className="py-20 px-6" id="contact">
-      <div className="max-w-xl mx-auto text-center">
+    <footer className="py-28 px-6" id="contact">
+      <div className="max-w-2xl mx-auto text-center">
         <motion.h2
-          className="text-3xl md:text-4xl font-serif font-medium mb-4 text-foreground"
+          className="text-4xl md:text-5xl font-serif font-medium mb-4 text-foreground"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -21,7 +22,7 @@ export default function FooterSection() {
           Let's <span className="italic text-gradient-warm">connect</span>.
         </motion.h2>
         <motion.p
-          className="text-muted-foreground text-sm font-sans font-light mb-10 max-w-xs mx-auto leading-relaxed"
+          className="text-muted-foreground text-sm md:text-base font-sans font-light mb-14 max-w-sm mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -29,27 +30,40 @@ export default function FooterSection() {
         >
           Always open to interesting conversations, collaborations, and opportunities.
         </motion.p>
+
         <motion.div
-          className="flex justify-center gap-8"
-          initial={{ opacity: 0, y: 10 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {socials.map(({ icon: Icon, href, label }) => (
+          {socials.map(({ icon: Icon, href, label }, i) => (
             <motion.a
               key={label}
               href={href}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-300 p-3 rounded-full hover:bg-muted"
+              className="group flex flex-col items-center gap-4 p-8 rounded-2xl border border-border bg-card/50 hover:bg-accent/50 hover:border-accent transition-all duration-300"
+              whileHover={{ scale: 1.03, y: -4 }}
+              whileTap={{ scale: 0.97 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 * i }}
               aria-label={label}
-              whileHover={{ scale: 1.15, y: -2 }}
-              whileTap={{ scale: 0.95 }}
             >
-              <Icon size={20} strokeWidth={1.5} />
+              <Icon
+                size={40}
+                strokeWidth={1.2}
+                className="text-muted-foreground group-hover:text-foreground transition-colors duration-300"
+              />
+              <span className="text-xs tracking-[0.15em] uppercase font-sans font-light text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                {label}
+              </span>
             </motion.a>
           ))}
         </motion.div>
-        <div className="mt-16 pt-8 border-t border-border">
+
+        <div className="pt-8 border-t border-border">
           <p className="text-muted-foreground text-xs tracking-[0.2em] uppercase font-sans font-light">
             © 2026 — Built with intention
           </p>
