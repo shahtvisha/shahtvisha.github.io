@@ -1,3 +1,4 @@
+import FloatingNav from "@/components/FloatingNav";
 import OrbitalHero from "@/components/OrbitalHero";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
