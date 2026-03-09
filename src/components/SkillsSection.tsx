@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const skillCategories = [
   {
@@ -14,6 +15,35 @@ const skillCategories = [
     skills: ["Embedded Systems", "Machine Learning", "Web Dev", "Algorithms", "Architecture", "Networking"],
   },
 ];
+
+function SkillPill({ skill, delay }: { skill: string; delay: number }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <motion.span
+      className="relative px-4 py-2 text-sm font-sans font-light tracking-widest uppercase text-muted-foreground border border-transparent hover:border-border hover:text-foreground rounded-full cursor-default transition-colors duration-300 select-none"
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      whileHover={{ scale: 1.08 }}
+    >
+      {hovered && (
+        <motion.span
+          className="absolute inset-0 rounded-full bg-primary/5"
+          layoutId="skill-glow"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+        />
+      )}
+      <span className="relative z-10">{skill}</span>
+    </motion.span>
+  );
+}
 
 export default function SkillsSection() {
   return (
@@ -45,14 +75,9 @@ export default function SkillsSection() {
               <h3 className="font-serif italic text-foreground text-lg mb-5">
                 {cat.title}
               </h3>
-              <div className="flex flex-wrap gap-x-6 gap-y-2">
-                {cat.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-sm font-sans font-light tracking-widest uppercase text-muted-foreground"
-                  >
-                    {skill}
-                  </span>
+              <div className="flex flex-wrap gap-2">
+                {cat.skills.map((skill, si) => (
+                  <SkillPill key={skill} skill={skill} delay={ci * 0.1 + si * 0.05} />
                 ))}
               </div>
             </motion.div>

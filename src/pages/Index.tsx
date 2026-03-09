@@ -1,3 +1,4 @@
+import FloatingNav from "@/components/FloatingNav";
 import OrbitalHero from "@/components/OrbitalHero";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
@@ -7,7 +8,8 @@ import ParallaxSection from "@/components/ParallaxSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background scroll-smooth">
+      <FloatingNav />
       <OrbitalHero />
       <ParallaxSection offset={50}>
         <AboutSection />
