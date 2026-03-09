@@ -88,19 +88,27 @@ export default function OrbitalHero() {
         </div>
       </div>
 
-      <motion.div
-        className="absolute bottom-14"
+      <motion.a
+        href="#about"
+        className="absolute bottom-14 flex flex-col items-center gap-2 cursor-pointer group"
         initial={{ opacity: 0 }}
-        animate={{ opacity: settled ? 0.35 : 0 }}
+        animate={{ opacity: settled ? 0.6 : 0 }}
         transition={{ delay: 1, duration: 0.8 }}
+        whileHover={{ opacity: 1 }}
       >
+        <span className="text-[10px] tracking-[0.3em] uppercase font-sans text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+          Scroll
+        </span>
         <motion.div
-          className="w-px h-10 bg-foreground/20 mx-auto"
-          animate={{ scaleY: [1, 0.4, 1] }}
-          transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-          style={{ transformOrigin: "top" }}
-        />
-      </motion.div>
+          className="w-5 h-8 rounded-full border border-muted-foreground/40 flex items-start justify-center p-1"
+        >
+          <motion.div
+            className="w-1 h-1.5 rounded-full bg-muted-foreground"
+            animate={{ y: [0, 12, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          />
+        </motion.div>
+      </motion.a>
     </section>
   );
 }
