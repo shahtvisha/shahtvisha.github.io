@@ -21,7 +21,7 @@ function SkillPill({ skill, delay }: { skill: string; delay: number }) {
 
   return (
     <motion.span
-      className="relative px-4 py-2 text-sm font-sans font-light tracking-widest uppercase text-muted-foreground border border-transparent hover:border-border hover:text-foreground rounded-full cursor-default transition-colors duration-300 select-none"
+      className="relative px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-sans font-light tracking-widest uppercase text-muted-foreground border border-transparent hover:border-border hover:text-foreground rounded-full cursor-default transition-colors duration-300 select-none"
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -47,7 +47,7 @@ function SkillPill({ skill, delay }: { skill: string; delay: number }) {
 
 export default function SkillsSection() {
   return (
-    <section className="py-32 px-6" id="skills">
+    <section className="py-20 md:py-32 px-4 md:px-6" id="skills">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -55,15 +55,15 @@ export default function SkillsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-xs tracking-[0.35em] uppercase text-muted-foreground mb-8 font-sans">
+          <p className="text-xs tracking-[0.35em] uppercase text-muted-foreground mb-6 md:mb-8 font-sans">
             Expertise
           </p>
-          <h2 className="text-4xl md:text-5xl font-serif font-medium mb-16 text-foreground leading-tight">
+          <h2 className="text-3xl md:text-5xl font-serif font-medium mb-12 md:mb-16 text-foreground leading-tight">
             What I <span className="italic text-gradient-warm">bring</span> to the table.
           </h2>
         </motion.div>
 
-        <div className="space-y-14">
+        <div className="space-y-10 md:space-y-14">
           {skillCategories.map((cat, ci) => (
             <motion.div
               key={cat.title}
@@ -72,10 +72,10 @@ export default function SkillsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: ci * 0.1 }}
             >
-              <h3 className="font-serif italic text-foreground text-lg mb-5">
+              <h3 className="font-serif italic text-foreground text-base md:text-lg mb-4 md:mb-5">
                 {cat.title}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 md:gap-2">
                 {cat.skills.map((skill, si) => (
                   <SkillPill key={skill} skill={skill} delay={ci * 0.1 + si * 0.05} />
                 ))}
