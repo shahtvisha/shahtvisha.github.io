@@ -6,7 +6,7 @@ const skills = [
   "Machine Learning", "Algorithms", "Systems", "Research",
 ];
 
-const ORBIT_DURATION = 7;
+const ORBIT_DURATION = 5;
 
 export default function OrbitalHero() {
   const [settled, setSettled] = useState(false);
