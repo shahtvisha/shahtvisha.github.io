@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const skills = [
-  "React", "Python", "C++", "TypeScript",
-  "Machine Learning", "Algorithms", "Systems", "Research",
+   "Python", "C++", "TypeScript", "React",
+  "Machine Learning", "Deep Learning", "Algorithms", "Robotics", "Research",
 ];
 
 const ORBIT_DURATION = 5;
@@ -82,7 +82,7 @@ export default function OrbitalHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 1.2 }}
             >
-              Your Name
+              Tvisha Shah
             </motion.span>
           </motion.h1>
           <motion.div

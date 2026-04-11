@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 const socials = [
-  { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Twitter, href: "#", label: "X" },
+  { icon: Mail, href: "mailto:tvisha_shah@brown.edu", label: "Email" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/tvisha-v-shah/", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/shahtvisha", label: "GitHub" },
+  { icon: Twitter, href: "https://twitter.com/personalrepo", label: "X" },
 ];
 
 export default function FooterSection() {

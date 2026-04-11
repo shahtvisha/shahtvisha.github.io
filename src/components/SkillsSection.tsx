@@ -4,15 +4,15 @@ import { useState } from "react";
 const skillCategories = [
   {
     title: "Languages",
-    skills: ["C++", "Python", "TypeScript", "Java", "Rust", "SQL"],
+    skills: ["Python", "C++","TypeScript", "SQL"],
   },
   {
     title: "Frameworks & Tools",
-    skills: ["React", "Node.js", "TensorFlow", "Docker", "Git", "Linux"],
+    skills: ["TensorFlow", "Docker", "Git", "Pytorch", "React", "Node.js"],
   },
   {
     title: "Domains",
-    skills: ["Embedded Systems", "Machine Learning", "Web Dev", "Algorithms", "Architecture", "Networking"],
+    skills: ["Reinforcement Learning", "Robotics", "Computer Vision", "Deep Learning", "Machine Learning", "Algorithms", "Full Stack Web Development"],
   },
 ];
 

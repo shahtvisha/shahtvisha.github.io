@@ -1,4 +1,5 @@
-import { Music, Camera, Mountain, BookOpen, Plane, Coffee } from "lucide-react";
+import { write } from "fs";
+import { Music, Camera, Mountain, BookOpen, Plane, Coffee, Mic, Pen, Dumbbell } from "lucide-react";
 
 export interface HobbyData {
   slug: string;
@@ -13,17 +14,17 @@ export interface HobbyData {
 
 export const hobbies: HobbyData[] = [
   {
-    slug: "hiking",
-    icon: Mountain,
-    label: "Hiking",
-    note: "Chasing summits & sunsets",
-    hero: "There's nothing like earning a view.",
+    slug: "music",
+    icon: Music,
+    label: "Music",
+    note: "It's my escape and my inspiration, I have 5 ways to experience it.",
+    hero: "Without music, life would be a mistake.",
     description:
-      "From the White Mountains of New Hampshire to the volcanic ridges of Iceland, hiking is how I reset. It's the perfect balance of physical challenge and mental clarity — a reminder that the best things in life require effort.",
+      "I have an explore and exploit approach to music, where I'm 15% exploring and 85% exploiting. Some songs I don't think I'll ever get over are 'Tere Bina' by A.R. Rahman, 'Ek Dil Ek Jaan' by Shivam Pathan, 'Don't smile' by Sabrina Carpenter and 'F1' by Hanz Zimmer. If you have songs that I should explore and won't stop exploiting, please please share.",
     highlights: [
-      "Completed the Presidential Traverse in a single push",
-      "Hiked 200+ miles across 5 national parks",
-      "Favorite trail: Kalalau Trail, Kauai",
+      "Love playing Mia and Sebastian's Theme on Piano",
+      "My Heart Will Go On from Titanic on my Bamboo Flute sounds heavenly",
+      "Trying to learn drums from my dad",
     ],
     gallery: [
       { caption: "Summit sunrise, Mt. Washington" },
@@ -32,17 +33,17 @@ export const hobbies: HobbyData[] = [
     ],
   },
   {
-    slug: "photography",
-    icon: Camera,
-    label: "Photography",
-    note: "Street & landscape",
-    hero: "Seeing the world one frame at a time.",
+    slug: "debating-and-public-speaking",
+    icon: Mic,
+    label: "Debating & Public Speaking",
+    note: "It makes me think and meet other thinkers.",
+    hero: "You don't get fed with your mouth closed",
     description:
-      "Photography taught me to slow down and really look. Whether it's the geometry of a city street or the drama of golden hour on a mountain lake, I love capturing moments that make people pause.",
+      "Debating has sharpened my ability to think on my feet and articulate my thoughts clearly. It's pushed me to think from different perspectives and horizons. It fires up my curiosity and makes me a better communicator. I can sell and defend my thoughts but I like to believe that I'm built on counterarguments that have changed how I think. And most importantly, it has taught me to listen.",
     highlights: [
-      "Shot on Fujifilm X-T4 & iPhone 15 Pro",
-      "Featured in university art exhibition",
-      "Editing workflow: Lightroom + VSCO film presets",
+      "Travelled to Paris and Taiwan for competitions by Harvard",
+      "Thoroughly enjoyed being part of Junto (Discussion Group on Society, Technology, Language, AI) at Brown",
+      "Got invited to speak at TEDx talk at a university in Mumbai",
     ],
     gallery: [
       { caption: "Rain-soaked streets of Tokyo" },
@@ -51,17 +52,15 @@ export const hobbies: HobbyData[] = [
     ],
   },
   {
-    slug: "music",
-    icon: Music,
-    label: "Music",
-    note: "Guitar & vinyl collector",
-    hero: "Life's too short for bad playlists.",
+    slug: "poetry",
+    icon: Pen,
+    label: "Poetry",
+    note: "When everything fails, I write.",
+    hero: "The best words in the best order",
     description:
-      "I've been playing guitar for over a decade — mostly fingerstyle acoustic and the occasional blues jam. My vinyl collection is a curated mess of jazz, indie rock, and film scores.",
+      "I've been writing poems since forever, and it comes from my obsession with music and making music. But my father who also writes poetry has been a huge influence on me, he bought me my first poetry book, which is my most valued possession. With every page that turns, everything changes, I am a different person in every poem and it's a great record of my feelings and growth over the years.",
     highlights: [
-      "10+ years of guitar, self-taught",
-      "150+ vinyl records and counting",
-      "Favorite album: In Rainbows by Radiohead",
+      "Ran a very personal poetry blog for 10 years that organically reached 3 countries and very few viewers (thank god)",
     ],
     gallery: [
       { caption: "Late night practice session" },
@@ -73,14 +72,13 @@ export const hobbies: HobbyData[] = [
     slug: "reading",
     icon: BookOpen,
     label: "Reading",
-    note: "Sci-fi & philosophy",
-    hero: "Books are the closest thing to telepathy.",
+    note: "and I love bookstores!",
+    hero: "Just leave me alone with a book, and I'll be happy.",
     description:
-      "I read widely — from hard sci-fi and speculative fiction to philosophy and cognitive science. Reading keeps my thinking flexible and gives me ideas that show up in unexpected places in my work.",
+      "I read widely — from self help, philosophy (western and Indian), mythologies, architecture, poetry, history, economics to cognitive science. Currently reading a lot of textbooks, last read: Algorithms for Decision Making (https://algorithmsbook.com/decisionmaking/#)",
     highlights: [
-      "~40 books per year",
-      "Favorite author: Ted Chiang",
-      "Currently reading: Gödel, Escher, Bach",
+      "Favorite place to read in Providence: The Providence Athenaeum",
+      "Favorite place to read in Mumbai: Granth",
     ],
     gallery: [
       { caption: "Reading nook at home" },
@@ -92,14 +90,14 @@ export const hobbies: HobbyData[] = [
     slug: "travel",
     icon: Plane,
     label: "Travel",
-    note: "12 countries & counting",
-    hero: "The world is too interesting to stay in one place.",
+    note: "Serial postcard collector",
+    hero: "A nice way to touch some grass",
     description:
-      "Travel is how I collect perspectives. I'm drawn to places where old meets new — ancient temples next to neon signs, fishing villages beside tech hubs. Every trip reshapes how I think about design and systems.",
+      "I love travelling and planning trips, I try to do unique and authentic experiences and love immersing myself in the history and culture of each place. Places I really want to visit are Morocco, Egypt and Greece",
     highlights: [
-      "12 countries across 4 continents",
-      "Favorite city: Kyoto, Japan",
-      "Next destination: Patagonia",
+      "I love cities! Big fan of New York, Paris and Mumbai",
+      "I love road trips! Big Sur and Scotland have been my all-time favorites road trips.",
+      "I love water and mountains and all activities related to them. Surfing has been very humbling and exhilarating for me",
     ],
     gallery: [
       { caption: "Fushimi Inari at dawn" },
@@ -108,17 +106,15 @@ export const hobbies: HobbyData[] = [
     ],
   },
   {
-    slug: "coffee",
-    icon: Coffee,
-    label: "Coffee",
-    note: "Pour-over enthusiast",
-    hero: "Great code starts with great coffee.",
+    slug: "Fitness",
+    icon: Dumbbell,
+    label: "Fitness",
+    note: "Just trying to be able to do a pull-up xD",
+    hero: "Strong body = Strong mind",
     description:
-      "What started as a caffeine habit turned into a genuine craft obsession. I roast small batches at home, dial in pour-over recipes, and hunt for specialty roasters wherever I travel.",
+      "In all honesty, while I have a long way to go, I'm enjoying the little progress I make every day. Always inspired at the gym, especially at Brown, the energy is contagious.",
     highlights: [
-      "Home roasting with a Behmor 2000",
-      "Daily driver: Hario V60",
-      "Favorite origin: Ethiopian Yirgacheffe",
+      "None yet but I'm hoping to update this in a few months!",
     ],
     gallery: [
       { caption: "Morning V60 ritual" },
