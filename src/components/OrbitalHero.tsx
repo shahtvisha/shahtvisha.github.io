@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const skills = [
-   "Python", "C++", "TypeScript", "React",
-  "Machine Learning", "Deep Learning", "Algorithms", "Robotics", "Research",
+   "Python", "C++", "TypeScript",  "Machine Learning","Deep Learning", "Robotics", "Research", "CogSci"
 ];
 
 const ORBIT_DURATION = 5;
@@ -21,8 +20,8 @@ export default function OrbitalHero() {
   }, []);
 
   const desktopPositions = [
-    { x: -220, y: 0 }, { x: -100, y: 0 }, { x: 20, y: 0 }, { x: 140, y: 0 },
-    { x: -180, y: 36 }, { x: -50, y: 36 }, { x: 80, y: 36 }, { x: 200, y: 36 },
+    { x: -220, y: 0 }, { x: -100, y: 0 }, { x: 20, y: 0 }, { x: 180, y: 0 },
+    { x: -220, y: 36 }, { x: -50, y: 36 }, { x: 80, y: 36 }, { x: 200, y: 36 },
   ];
 
   const mobilePositions = [
