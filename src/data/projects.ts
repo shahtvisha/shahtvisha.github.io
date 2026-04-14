@@ -15,23 +15,27 @@ export interface ProjectData {
 
 export const projects: ProjectData[] = [
   {
-    slug: "neural-style-transfer",
-    title: "Neural Style Transfer",
-    description: "Real-time artistic style transfer using deep convolutional networks, optimized for edge deployment.",
-    tags: ["Python", "TensorFlow", "CUDA"],
-    year: "2025",
+    slug: "zero-shot-affordance",
+    title: "Zero-Shot 3D Affordance Mapping",
+    description:
+      "Geometry-aware affordance mapping combining CLIP feature lifting with surface geometry priors — no training data required.",
+    tags: ["Python", "3D Perception", "Zero-Shot"],
+    year: "2026",
     color: "hsl(var(--primary))",
     longDescription:
-      "A real-time neural style transfer system that transforms photos into artwork using deep convolutional neural networks. The model is optimized for edge deployment using TensorRT, achieving 30fps on embedded GPUs while maintaining high-quality artistic output.",
+      "A zero-shot system that localizes interaction regions in 3D point clouds from natural language queries — 'where should I grasp this?' — without any task-specific training. CLIP patch features are lifted from 2D into 3D via back-projection, then multiplied by query-conditioned geometric priors derived from local surface analysis (normals, planarity, curvature). Evaluated on the LASO benchmark against CLIP-only and geometry-only baselines, with a novel finding on query phrasing sensitivity.",
     features: [
-      "Real-time inference at 30fps on Jetson Nano",
-      "Support for arbitrary style images",
-      "Progressive style blending with adjustable intensity",
-      "Batch processing mode for video files",
+      "Multiplicative fusion of CLIP semantics × geometric priors — a point must look right and be shaped right",
+      "+35% IoU over CLIP-only baseline on grasp affordance, +53% on move affordance",
+      "Query sensitivity finding: short action-centric queries outperform verbose descriptions 3× on P@50",
+      "Evaluated on LASO benchmark (CVPR 2025) across 4 affordance categories with full ablation study",
     ],
-    techStack: ["Python", "TensorFlow 2.x", "TensorRT", "CUDA", "OpenCV", "Flask API"],
-    demoUrl: "https://example.com/demo",
-    githubUrl: "https://github.com",
+    techStack: [
+      "Python", "PyTorch", "CLIP / ViT-L-14", "Open3D",
+      "FastAPI", "ScanNet", "LASO Benchmark",
+    ],
+    demoUrl: "https://tvishashah-zeroshot3d-affordance.hf.space/static/index.html",
+    githubUrl: "https://github.com/shahtvisha/Zeroshot3DAffordanceMapping",
     screenshots: [
       { caption: "Style transfer applied to a cityscape" },
       { caption: "Real-time webcam mode" },
@@ -39,49 +43,68 @@ export const projects: ProjectData[] = [
     ],
   },
   {
-    slug: "distributed-kv-store",
-    title: "Distributed KV Store",
-    description: "A fault-tolerant key-value store with Raft consensus, built for low-latency reads at scale.",
-    tags: ["Rust", "Systems", "Networking"],
-    year: "2025",
+    slug: "latent-stress-dynamics-sleep",
+    title: "Latent Stress Dynamics in Sleep",
+    description:
+      "As part of my research at Carney Institute for Brain Sciences with Dr. Debbie Yee, this project models how latent stress states (via HRV) shape sleep architecture using longitudinal time-series and mixed-effects modeling.",
+    tags: ["Python", "ML", "Computational Neuroscience", "Time Series", "State-Space Models"],
+    year: "2025–2026",
     color: "hsl(var(--accent))",
     longDescription:
-      "A distributed key-value store implementing the Raft consensus protocol from scratch in Rust. Designed for strong consistency and partition tolerance with sub-millisecond read latency through a leader-lease optimization.",
+      "A first-author computational cognitive science project analyzing 8 months of continuous wearable data (Oura Ring) from 49 participants to study latent stress dynamics and their effect on sleep architecture. The work builds a longitudinal time-series modeling framework using regression, mixed-effects, and lagged mixed-effects models to capture within-subject and cross-temporal dependencies between autonomic stress (proxied by HRV) and sleep stages. The project is being extended toward state-space modeling to infer latent physiological stress states and their temporal evolution in real-world settings.",
+
     features: [
-      "Raft consensus with leader election and log replication",
-      "Sub-millisecond reads via leader lease optimization",
-      "Automatic cluster rebalancing on node failure",
-      "gRPC-based inter-node communication",
+      "Modeled longitudinal HRV–sleep interactions using regression, mixed-effects, and lagged mixed-effects models",
+      "Quantified delayed (multi-day) effects of stress physiology on sleep efficiency and deep sleep",
+      "Characterized within-subject and population-level variability in autonomic stress–sleep coupling",
+      "Extended toward state-space models to infer latent stress states from wearable physiological signals",
     ],
-    techStack: ["Rust", "Tokio", "gRPC/Tonic", "RocksDB", "Protocol Buffers"],
-    githubUrl: "https://github.com",
+
+    techStack: [
+      "Python",
+      "State-Space Models",
+      "Mixed Effects Models",
+      "Time-Series Analysis",
+      "Computational Cognitive Science"
+    ],
+
     screenshots: [
-      { caption: "Cluster dashboard showing node health" },
-      { caption: "Latency benchmarks vs. etcd" },
-      { caption: "Architecture diagram" },
+      { caption: "Time-series trajectories of HRV and sleep efficiency across participants" },
+      { caption: "Lagged mixed-effects model showing delayed stress effects on sleep (7-day window)" },
+      { caption: "Conceptual diagram of latent stress state influencing sleep architecture" },
     ],
   },
   {
-    slug: "compiler-optimizations",
-    title: "Compiler Optimizations",
-    description: "LLVM-based pass for loop vectorization targeting ARM NEON, achieving 2.3× speedup on benchmarks.",
-    tags: ["C++", "LLVM", "Architecture"],
+    slug: "medical-text-summarization-transformers",
+    title: "Medical Text Summarization with Transformers",
+    description:
+      "A comparative NLP study evaluating transformer and sequence models for domain-specific medical text summarization using PubMed data and ROUGE-based evaluation.",
+    tags: ["Python", "NLP", "Transformers", "Deep Learning", "PyTorch"],
     year: "2024",
-    color: "hsl(var(--primary))",
+    color: "hsl(var(--accent))",
     longDescription:
-      "A custom LLVM optimization pass that identifies vectorizable loop patterns and generates ARM NEON SIMD instructions. The pass integrates into the standard LLVM pipeline and was evaluated against SPEC CPU 2017 benchmarks.",
+      "A natural language processing research project focused on domain-specific text summarization in the medical field using the PubMed dataset. The study benchmarks multiple architectures, including RNN-based models and transformer-based models, to evaluate their effectiveness in generating coherent and clinically relevant summaries. Models including GPT-2, BART, and T5 (which was fine-tuned on the dataset) and compared using ROUGE metrics to assess summarization quality in a specialized biomedical context.",
+
     features: [
-      "Custom loop analysis for vectorization candidates",
-      "ARM NEON code generation for common patterns",
-      "2.3× average speedup on targeted benchmarks",
-      "Integrated into LLVM's PassManager pipeline",
+      "Benchmarked RNN-based and transformer-based architectures for medical text summarization",
+      "Fine-tuned domain-specific models including BioT5 and BART on PubMed dataset",
+      "Evaluated model performance using ROUGE-1 and ROUGE-L metrics for summarization quality",
+      "Analyzed trade-offs between general-purpose (GPT-2) and biomedical-adapted transformers",
     ],
-    techStack: ["C++17", "LLVM 16", "ARM NEON Intrinsics", "CMake", "Google Benchmark"],
+
+    techStack: [
+      "Python",
+      "PyTorch",
+      "Deep Learning",
+      "Natural Language Processing"
+    ],
+
     githubUrl: "https://github.com",
+
     screenshots: [
-      { caption: "Speedup chart across SPEC benchmarks" },
-      { caption: "IR before and after optimization" },
-      { caption: "Pass pipeline integration" },
+      { caption: "Model comparison of ROUGE-1 and ROUGE-L scores across architectures" },
+      { caption: "Fine-tuning pipeline for BioT5 and BART on PubMed dataset" },
+      { caption: "Example generated summaries vs reference medical abstracts" },
     ],
   },
   {
@@ -89,7 +112,7 @@ export const projects: ProjectData[] = [
     title: "Portfolio Platform",
     description: "This very site — a cinematic, animated personal portfolio built with React and Framer Motion.",
     tags: ["React", "TypeScript", "Design"],
-    year: "2024",
+    year: "2025",
     color: "hsl(var(--accent))",
     longDescription:
       "A cinematic personal portfolio with orbital animations, parallax scrolling, and smooth page transitions. Built to showcase both technical depth and design sensibility, this site is itself a project worth exploring.",

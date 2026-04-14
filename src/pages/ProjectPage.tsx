@@ -137,7 +137,7 @@ export default function ProjectPage() {
           </div>
 
           {/* Screenshots */}
-          <div>
+          {/* <div>
             <h2 className="font-serif text-foreground text-xl mb-6">Screenshots</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {project.screenshots.map((item, i) => (
@@ -158,7 +158,7 @@ export default function ProjectPage() {
             <p className="text-xs text-muted-foreground/50 font-sans mt-4 italic">
               Replace placeholders with real screenshots
             </p>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </div>
