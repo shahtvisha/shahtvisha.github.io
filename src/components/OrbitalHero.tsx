@@ -25,8 +25,8 @@ export default function OrbitalHero() {
   ];
 
   const mobilePositions = [
-    { x: -90, y: -20 }, { x: 30, y: -20 }, { x: -60, y: 10 }, { x: 60, y: 10 },
-    { x: -90, y: 40 }, { x: 30, y: 40 }, { x: -60, y: 70 }, { x: 60, y: 70 },
+    { x: -90, y: 5 }, { x: 30, y: 5 }, { x: -90, y: 25 }, { x: 30, y: 25 },
+    { x: -90, y: 45 }, { x: 30, y: 45 }, { x: -90, y: 65 }, { x: 30, y: 65 },
   ];
 
   const settledPositions = isMobile ? mobilePositions : desktopPositions;
