@@ -99,7 +99,7 @@ export const projects: ProjectData[] = [
       "Natural Language Processing"
     ],
 
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/shahtvisha/TextSummarizationUsingDeepLearning",
 
     screenshots: [
       { caption: "Model comparison of ROUGE-1 and ROUGE-L scores across architectures" },
