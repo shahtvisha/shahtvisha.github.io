@@ -20,16 +20,34 @@ export default function AboutSection() {
           </h2>
           <div className="space-y-5 md:space-y-6 text-sm md:text-base text-muted-foreground leading-[1.8] font-sans font-light">
             <p>
-              I'm a Master's student at <span className="text-foreground font-normal">Brown University</span>,
-              studying Computer Science & Engineering. I build technology that's
-              both <em>powerful</em> and <em>beautiful</em>.
-            </p>
+              I'm a Master's student at{" "}
+              <span className="text-foreground font-normal">Brown University</span>,
+              where I study Computer Engineering & Computer Science with research in AI and robotics. I'm currently a research assistant at the Carney Institute for Brain Science at Brown, and previously have been a RA at Georgia Tech. I've worked as an intern in India's leading AI company, Fractal and have been an SDE intern at Jai Kisan. </p>
             <p>
-              From embedded systems to machine learning pipelines,
-              I love making complex things feel effortless —
-              bringing rigor from engineering and empathy from design.
+              I work on reinforcement learning and robotics, mainly focused on decision-making in intelligent systems and agents. I'm curious, passionate, and hardworking, and I'm the happiest when I'm building.
             </p>
           </div>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 md:mt-12 inline-flex items-center gap-2.5 text-xs tracking-[0.2em] uppercase font-sans font-normal text-foreground border border-foreground/20 hover:border-foreground/60 px-6 py-3.5 transition-all duration-300 hover:bg-foreground/5 group"
+          >
+            <span>View Resume</span>
+            <svg
+              className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M7 17L17 7M17 7H7M17 7v10"
+              />
+            </svg>
+          </a>
         </motion.div>
 
         <motion.div
@@ -39,7 +57,7 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {[
+          {/* {[
             { value: "15+", label: "Projects" },
             { value: "3", label: "Publications" },
             { value: "∞", label: "Curiosity" },
@@ -52,7 +70,7 @@ export default function AboutSection() {
                 {stat.label}
               </p>
             </div>
-          ))}
+          ))} */}
         </motion.div>
       </div>
     </section>

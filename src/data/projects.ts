@@ -115,7 +115,7 @@ export const projects: ProjectData[] = [
     year: "2025",
     color: "hsl(var(--accent))",
     longDescription:
-      "A cinematic personal portfolio with orbital animations, parallax scrolling, and smooth page transitions. Built to showcase both technical depth and design sensibility, this site is itself a project worth exploring.",
+      "A cinematic personal portfolio with orbital animations, parallax scrolling, and smooth page transitions.",
     features: [
       "Orbital skill animation with staggered entrance",
       "Scroll-driven parallax transitions between sections",
