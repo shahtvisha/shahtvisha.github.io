@@ -10,13 +10,13 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
         >
-          <p className="text-xs tracking-[0.35em] uppercase text-muted-foreground mb-6 md:mb-8 font-sans">
-            About
-          </p>
+            {/* <p className="text-xs tracking-[0.35em] uppercase text-muted-foreground mb-6 md:mb-8 font-sans">
+              About 
+            </p> */}
           <h2 className="text-3xl md:text-5xl font-serif font-medium mb-8 md:mb-10 text-foreground leading-tight">
-            Engineer by trade,
+            About <span className="italic text-gradient-warm">Me</span> 
             <br />
-            <span className="italic text-gradient-warm">creator</span> by heart.
+            
           </h2>
           <div className="space-y-5 md:space-y-6 text-sm md:text-base text-muted-foreground leading-[1.8] font-sans font-light">
             <p>
@@ -24,7 +24,10 @@ export default function AboutSection() {
               <span className="text-foreground font-normal">Brown University</span>,
               where I study Computer Engineering & Computer Science with research in AI and robotics. I'm currently a research assistant at the Carney Institute for Brain Science at Brown, and previously have been a RA at Georgia Tech. I've worked as an intern in India's leading AI company, Fractal and have been an SDE intern at Jai Kisan. </p>
             <p>
-              I work on reinforcement learning and robotics, mainly focused on decision-making in intelligent systems and agents. I'm curious, passionate, and hardworking, and I'm the happiest when I'm building.
+              I work on <b>reinforcement learning and robotics</b>, mainly focused on decision-making in intelligent systems and agents. I'm curious, focused, passionate, and hardworking, and I'm the happiest when I'm building.
+            </p>
+            <p>
+              I'm an aspiring entrepreneur and <b>currently looking to work in growing startup environments</b>. I'm also open to research opportunities in AI, robotics, and computational neuroscience. If you’re looking for someone who can build, communicate, and understand what actually makes a product work, you’re in the right place! 
             </p>
           </div>
           <a
