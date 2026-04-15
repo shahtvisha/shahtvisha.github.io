@@ -130,15 +130,11 @@ export const projects: ProjectData[] = [
     "Express",
     "MongoDB",
     "Mongoose",
-    "Pug",
     "jQuery",
-    "Body-parser",
-    "Cookie-parser",
-    "Multer",
-    "Nodemailer",
-    "dotenv",
     "PayU Money",
   ],
+  githubUrl: "https://github.com/shahtvisha/CoFinder",
+
   screenshots: [
     { caption: "User matching interface" },
     { caption: "Product listing with discounts" },

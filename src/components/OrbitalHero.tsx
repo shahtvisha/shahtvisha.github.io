@@ -30,8 +30,8 @@ export default function OrbitalHero() {
   ];
 
   const settledPositions = isMobile ? mobilePositions : desktopPositions;
-  const rx = isMobile ? 140 : 340;
-  const ry = isMobile ? 90 : 200;
+  const rx = isMobile ? 200 : 340;
+  const ry = isMobile ? 130 : 200;
   const orbitSize = isMobile ? { width: 320, height: 220 } : { width: 700, height: 420 };
 
   return (
