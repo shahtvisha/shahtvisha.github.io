@@ -31,7 +31,7 @@ export default function AboutSection() {
             </p>
           </div>
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/1GL9FKVKL1Yk6Zpp_MuEuu3GNZctIzc6O/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-10 md:mt-12 inline-flex items-center gap-2.5 text-xs tracking-[0.2em] uppercase font-sans font-normal text-foreground border border-foreground/20 hover:border-foreground/60 px-6 py-3.5 transition-all duration-300 hover:bg-foreground/5 group"

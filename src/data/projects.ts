@@ -51,7 +51,7 @@ export const projects: ProjectData[] = [
     year: "2025–2026",
     color: "hsl(var(--accent))",
     longDescription:
-      "A first-author computational cognitive science project analyzing 8 months of continuous wearable data (Oura Ring) from 49 participants to study latent stress dynamics and their effect on sleep architecture. The work builds a longitudinal time-series modeling framework using regression, mixed-effects, and lagged mixed-effects models to capture within-subject and cross-temporal dependencies between autonomic stress (proxied by HRV) and sleep stages. The project is being extended toward state-space modeling to infer latent physiological stress states and their temporal evolution in real-world settings.",
+      "A computational cognitive science project analyzing 8 months of continuous wearable data (Oura Ring) from 49 participants to study latent stress dynamics and their effect on sleep architecture. The work builds a longitudinal time-series modeling framework using regression, mixed-effects, and lagged mixed-effects models to capture within-subject and cross-temporal dependencies between autonomic stress (proxied by HRV) and sleep stages. The project is being extended toward state-space modeling to infer latent physiological stress states and their temporal evolution in real-world settings. A part of this research has been submitted to CCN 2026. ",
 
     features: [
       "Modeled longitudinal HRV–sleep interactions using regression, mixed-effects, and lagged mixed-effects models",
@@ -83,7 +83,7 @@ export const projects: ProjectData[] = [
     year: "2024",
     color: "hsl(var(--accent))",
     longDescription:
-      "A natural language processing research project focused on domain-specific text summarization in the medical field using the PubMed dataset. The study benchmarks multiple architectures, including RNN-based models and transformer-based models, to evaluate their effectiveness in generating coherent and clinically relevant summaries. Models including GPT-2, BART, and T5 (which was fine-tuned on the dataset) and compared using ROUGE metrics to assess summarization quality in a specialized biomedical context.",
+      "A natural language processing research project focused on domain-specific text summarization in the medical field using the PubMed dataset. The study benchmarks multiple architectures, including RNN-based models and transformer-based models, to evaluate their effectiveness in generating coherent and clinically relevant summaries. Models including GPT-2, BART, and T5 (which was fine-tuned on the dataset (BioT5)) and compared using ROUGE metrics to assess summarization quality in a specialized biomedical context.",
 
     features: [
       "Benchmarked RNN-based and transformer-based architectures for medical text summarization",
