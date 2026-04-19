@@ -144,7 +144,7 @@ export const projects: ProjectData[] = [
   {
     slug: "portfolio-platform",
     title: "Portfolio Platform",
-    description: "This very site — a cinematic, animated personal portfolio built with React and Framer Motion.",
+    description: "A cinematic, animated personal portfolio built with React and Framer Motion.",
     tags: ["React", "TypeScript", "Design"],
     year: "2025",
     color: "hsl(var(--accent))",
